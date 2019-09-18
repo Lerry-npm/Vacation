@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">热销推荐</div>
-    <div class="item" v-for="item of recommendList" :key="item.id">
+    <div class="item border-bottom" v-for="item of recommendList" :key="item.id">
       <img class="item-img" :src="item.imgUrl"/>
       <div class="item-info">
         <p class="item-title">{{item.title}}</p>
