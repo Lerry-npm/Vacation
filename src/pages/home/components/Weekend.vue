@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">周末去哪儿</div>
-    <div class="weekend border-bottom" v-for="item of weekendList" :key="item.id">
+    <div class="weekend border-bottom" v-for="item of list" :key="item.id">
       <img class="weekend-img" :src="item.imgUrl"/>
       <p class="weekend-title">{{item.title}}</p>
       <p class="weekend-desc">{{item.desc}}</p>
@@ -12,20 +12,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      weekendList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/p/tts5/1808/71/51effca6fc1f5a02.jpg_r_390x260x90_85417729.jpg',
-        title: '温泉水上乐园',
-        desc: '体验家庭版豪华水上活动'
-      }, {
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/p/tts5/1808/71/51effca6fc1f5a02.jpg_r_390x260x90_85417729.jpg',
-        title: '温泉水上乐园',
-        desc: '体验家庭版豪华水上活动'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
