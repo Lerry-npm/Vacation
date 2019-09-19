@@ -56,7 +56,7 @@ export default {
           if (index >= 0 && index < 26) {
             this.$emit('change', this.letters[index])
           }
-        })
+        }, 16)
       }
     },
     handleTouchEnd () {
