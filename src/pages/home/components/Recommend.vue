@@ -1,14 +1,19 @@
 <template>
   <div>
     <div class="title">热销推荐</div>
-    <div class="item border-bottom" v-for="item of list" :key="item.id">
+    <router-link
+    class="item border-bottom"
+    v-for="item of list"
+    :key="item.id"
+    :to="/detail/ + item.id"
+    >
       <img class="item-img" :src="item.imgUrl"/>
       <div class="item-info">
         <p class="item-title">{{item.title}}</p>
         <p class="item-desc">{{item.desc}}</p>
         <button class="item-button">查看详情</button>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -31,6 +36,7 @@ export default {
   display: flex
   overflow: hidden
   height: 1.9rem
+  color: #666
   .item-img
     height: 1.7rem
     width: 1.7rem
