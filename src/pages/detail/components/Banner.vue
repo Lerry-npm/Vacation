@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleGallaryOpen">
-      <img class="banner-img" src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg"/>
+      <img class="banner-img" :src="img"/>
       <div class="banner-info">
-        <div class="info-title">大连海洋馆AAA</div>
+        <div class="info-title">{{sight}}</div>
         <div class="info-num">39
           <span class="iconfont">&#xe632;</span>
         </div>
       </div>
     </div>
     <common-gallary
-    :gallaryList="gallaryList"
+    :gallaryList="imgs"
     v-show="showGallary"
     @close="handleGallaryClose"
     ></common-gallary>
@@ -21,11 +21,14 @@
 import CommonGallary from '@/common/gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sight: String,
+    img: String,
+    imgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      gallaryList: ['http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg',
-        'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg']
+      showGallary: false
     }
   },
   methods: {
